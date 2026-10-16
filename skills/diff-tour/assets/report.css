@@ -517,14 +517,20 @@ figure.hunk > p.flag.note { color: var(--l2-ink); }
 figure.hunk > p.flag.fishy { color: var(--l3-ink); }
 figure.hunk > p.flag.hot { color: var(--l4-ink); }
 
-/* The diff card: a thin header bar with where the hunk is and its tools, then the code. */
+/* The diff card: a thin header bar with where the hunk is and its tools, then the code.
+   Clips overflow to allow rounded corners. Sticky header needs isolation and clip (instead of hidden). */
 figure.hunk > .card {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 8px;
-  overflow: hidden;
+  overflow: clip;
+  isolation: isolate;
 }
+/* Card header. Is sticky to allow clicking its buttons while scrolling over long content. */
 .card > figcaption {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   padding: .45rem .85rem;
   border-bottom: 1px solid var(--line-2);
   background: var(--panel-2);
