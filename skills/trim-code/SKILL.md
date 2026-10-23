@@ -201,6 +201,11 @@ whole".
   argument or object.
 - Two copies of the same code. Before extracting a helper, ask why the copies exist. If a
   missing representation would make both unnecessary, that is the idea.
+- The same state or value presented differently in two places: an empty-state note worded
+  twice, a status label spelled differently in a list and on a detail page, a date formatted
+  two ways. Specs that pin each form do not make it two things. Unifying the presentation
+  changes behavior, so report it under "Cut behavior" instead of leaving it out of the
+  shared representation.
 
 #### Then look at the diff as a whole
 
@@ -288,7 +293,9 @@ and where. If you found nothing, say so.
 
 Wait for both passes. Merge duplicates, and ideas that are alternatives to each other:
 keep the stronger one per list. When alternatives land on different lists, keep both; the
-report says that the later one would go further.
+report says that the later one would go further. A variant a pass offers as going further
+than an idea, e.g. the same extraction with a behavior change on top, is an idea of its own
+with its own code; never fold it into the smaller one.
 
 Number every idea that is left, bugs included: R1, R2, R3, … An idea keeps its code
 whatever list it ends up on and whether it is killed later, so the human can refer to it

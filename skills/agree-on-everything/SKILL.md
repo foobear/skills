@@ -23,6 +23,9 @@ To discover the required decisions, walk through the future implementation in yo
 - Changing frontend screens (often involving view templates that render HTML, or JSON API endpoints)
 - Reusing or changing the frontend component library (e.g. buttons, cards)
 - Resolving tensions with existing functionality that would be affected by this change
+- Deciding how to represent anything the change shows, derives or stores that existing code already shows, derives or stores (the same record, value, rule or data):
+  duplicated, shared through one unit (such as a model method, form model, component or serializer) with the differences as explicit parameters, or shared after reshaping the existing code.
+  Existing code is changeable, not a given; reshaping it is a decision like any other.
 
 Then talk to the human until you agree on every single decision.
 
@@ -120,6 +123,7 @@ Avoid batching questions. In particular, any non-trivial decision should always 
 It can be OK to batch small items that are closely related, or where a single answer will likely resolve them all.
 
 Start with the decisions that appear key to the requirements, e.g. when many other decisions depend on it or follow from it.
+A decision on sharing a representation with existing code (see the walkthrough above) is such a key decision: the look and the shape of the new parts follow from it.
 
 ## Free discussion, not multiple-choice
 

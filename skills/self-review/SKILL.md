@@ -45,6 +45,7 @@ By default, the sub-agent review focuses on the following quality dimensions:
 - **Regressions:** Does the new code conflict or damage behavior that existed before the change?
 - **Tests:** Did we add test coverage for the new or changed functionality?
 - **Performance:** Does the new code make excessive database queries? Do we process large amounts of data in application code instead of pushing that work off to the database? Should heavy work be moved to an async background job?
+- **Shape:** Imagine the existing code and the change had been written together today. Would the result have the same shape? If not, describe that shape: in particular, which one unit would represent what the change and the existing code both show, derive or store, and what would differ per place.
 
 For each dimension the sub-agent should return:
 
