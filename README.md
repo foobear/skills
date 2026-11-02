@@ -163,6 +163,31 @@ of the install command, which takes any number of skill names.
 
 </details>
 
+### ⬆️ [`/upgrade-dependencies`](skills/upgrade-dependencies/SKILL.md)
+
+> Runs a dependency upgrade round: lists every available upgrade, majors and runtime versions
+> included, lets you pick with a traffic-light table, then upgrades commit by commit. Reads the
+> changelogs so config and code follow the bump, re-bases copied-in config files on the current
+> template while keeping your customizations, verifies each commit, and hands over what is left
+> for you to do.
+
+<details>
+<summary>Install this skill</summary>
+
+> ```bash
+> npx skills add triskweline/skills --global --skill upgrade-dependencies \
+>   work-in-branch \
+>   pass-all-checks \
+>   self-review
+> ```
+>
+> The first name is the skill itself, the rest are the skills it uses for single steps of its
+> process. They are optional: leave any of them out and the agent tells you in one line what
+> is missing and what it does instead. Drop `--global` to install into the current project instead
+> of your user account.
+
+</details>
+
 ### 🐢 [`/slow-down`](skills/slow-down/SKILL.md)
 
 > Slows down a conversation where the agent raised more open questions or findings than you
